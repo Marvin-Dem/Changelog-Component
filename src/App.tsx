@@ -35,7 +35,7 @@ export default function App() {
                         </div>
                         <div className="flex items-center justify-center relative">
                             <div className="w-3 h-3 bg-black rounded-full absolute"></div>
-                            <div className="w-0.5 h-12 bg-black"></div>
+                            <div className="w-0.5 h-full bg-black"></div>
                         </div>
                         <div className="col-span-7 py-2">{dataArray.event}</div>
                     </div>
