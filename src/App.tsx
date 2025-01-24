@@ -1,4 +1,4 @@
-const DataArray = [
+const dataArray = [
     {
         date: "September 3, 2024",
         event: "Announcing Projects on Frontend Roadmap",
@@ -22,17 +22,27 @@ const DataArray = [
 
 export default function App() {
     return (
-        <div>
-            <div>Changelog</div>
-            <div>Here's everything we have shipped in the past few days</div>
-            <div>
-                {DataArray.map((DataArray) => (
-                    <div>
-                        {DataArray.date} {DataArray.event}
+        <div className="border-2 border-black rounded-lg flex flex-col items-center justify-center gap-y-4">
+            <h1 className="text-5xl">Changelog</h1>
+            <p className="text-gray-400 text-lg">
+                Here's everything we have shipped in the past few days
+            </p>
+            <div className="gap-4 text-lg flex flex-col">
+                {dataArray.map((dataArray) => (
+                    <div className="grid grid-cols-12" key={dataArray.date}>
+                        <div className="text-gray-500 col-span-4 text-right">
+                            {dataArray.date}
+                        </div>
+                        <div className="inline-block w-3 h-3 bg-black rounded-full relative m-2 ml-5 col-span-1">
+                            <div className="absolute w-0.5 h-12 bg-black translate-x-[5px] -translate-y-5"></div>
+                        </div>
+                        <div className="col-span-7">{dataArray.event}</div>
                     </div>
                 ))}
             </div>
-            <button>Visit complete Changelog</button>
+            <button className="bg-black rounded-lg text-white p-2 px-6 hover:bg-gray-700">
+                Visit complete Changelog
+            </button>
         </div>
     );
 }
