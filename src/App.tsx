@@ -27,16 +27,17 @@ export default function App() {
             <p className="text-gray-400 text-lg">
                 Here's everything we have shipped in the past few days
             </p>
-            <div className="gap-4 text-lg flex flex-col">
+            <div className="text-lg flex flex-col">
                 {dataArray.map((dataArray) => (
                     <div className="grid grid-cols-12" key={dataArray.date}>
-                        <div className="text-gray-500 col-span-4 text-right">
+                        <div className="text-gray-500 col-span-4 text-right py-2">
                             {dataArray.date}
                         </div>
-                        <div className="inline-block w-3 h-3 bg-black rounded-full relative m-2 ml-5 col-span-1">
-                            <div className="absolute w-0.5 h-12 bg-black translate-x-[5px] -translate-y-5"></div>
+                        <div className="flex items-center justify-center relative">
+                            <div className="w-3 h-3 bg-black rounded-full absolute"></div>
+                            <div className="w-0.5 h-12 bg-black"></div>
                         </div>
-                        <div className="col-span-7">{dataArray.event}</div>
+                        <div className="col-span-7 py-2">{dataArray.event}</div>
                     </div>
                 ))}
             </div>
